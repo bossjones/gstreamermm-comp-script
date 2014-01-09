@@ -11,6 +11,8 @@ before_script:
   - sudo dpkg -i libc6_2.17-0ubuntu5.1_amd64.deb
   - wget http://launchpadlibrarian.net/151433644/libglib2.0-0_2.38.0-1ubuntu1_amd64.deb
   - sudo dpkg -i libglib2.0-0_2.38.0-1ubuntu1_amd64.deb
+  - wget http://launchpadlibrarian.net/118383707/libelfg0_0.8.13-3build1_amd64.deb
+  - sudo dpkg -i libelfg0_0.8.13-3build1_amd64.deb
   - wget http://launchpadlibrarian.net/151433647/libglib2.0-bin_2.38.0-1ubuntu1_amd64.deb
   - sudo dpkg -i libglib2.0-bin_2.38.0-1ubuntu1_amd64.deb
   - wget http://launchpadlibrarian.net/151433648/libglib2.0-dev_2.38.0-1ubuntu1_amd64.deb
