@@ -7,25 +7,40 @@ before_script:
   - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
   - sudo add-apt-repository --yes ppa:gstreamer-developers/ppa
   - sudo apt-get update -qq
-  - sudo apt-get install -qq libboost1.48-dev libboost-regex1.48-dev libboost-test1.48-dev libyajl-dev libxml2-dev libxqilla-dev
   - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.8; fi
   - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
-  - sudo apt-get install -qq qt5-qmake qtbase5-dev qtdeclarative5-dev libqt5webkit5-dev libsqlite3-dev
-  - sudo apt-get install cmake
+  - sudo apt-get install -qq cmake
+  - sudo apt-get install -qq mm-common
+  - sudo apt-get install -qq libsigc++-2.0-dev
   - sudo apt-get install -qq libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
-  - GCS_SRC_DIR=$(pwd)
-  - sudo apt-get install libgtest-dev
+  - sudo apt-get install -qq libffi-dev
+  - sudo apt-get install -qq libxml-parser-perl
+  - GST_CREATOR_DIRECTORY=$(pwd)
+  - sudo apt-get install -qq libgtest-dev
   - cd /usr/src/gtest
   - sudo cmake .
   - sudo make
   - sudo mv libg* /usr/lib/
-  - cd $GCS_SRC_DIR
-  - mkdir build
-  - cd build
-  - cmake ..
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-
+  - cd $GST_CREATOR_DIRECTORY
+  - git clone git://git.gnome.org/glib
+  - cd glib
+  - git checkout 2.38.0
+  - ./autogen.sh
+  - make
+  - sudo make install
+  - cd ..
+  - git clone git://git.gnome.org/glibmm
+  - cd glibmm
+  - git checkout 2.38.0
+  - ./autogen.sh
+  - make
+  - sudo make install
+  - cd ..
+  - git clone git://git.gnome.org/gstreamermm
+  - cd gstreamermm
+  - ./autogen.sh
+  - make
+  - sudo make install
 script:
 
 branches:
