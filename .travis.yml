@@ -22,13 +22,12 @@ before_script:
   - sudo make
   - sudo mv libg* /usr/lib/
   - cd $GST_CREATOR_DIRECTORY
-  - git clone git://git.gnome.org/glib
-  - cd glib
-  - git checkout 2.38.0
-  - ./autogen.sh
-  - make
-  - sudo make install
-  - cd ..
+  - wget http://launchpadlibrarian.net/160132364/libglib2.0-0_2.39.2-0ubuntu1_i386.deb
+  - sudo dpkg -i libglib2.0-0_2.39.2-0ubuntu1_i386.deb
+  - wget http://launchpadlibrarian.net/160132367/libglib2.0-bin_2.39.2-0ubuntu1_i386.deb
+  - sudo dpkg -i libglib2.0-bin_2.39.2-0ubuntu1_i386.deb
+  - wget http://launchpadlibrarian.net/160132368/libglib2.0-dev_2.39.2-0ubuntu1_i386.deb
+  - sudo dpkg -i libglib2.0-dev_2.39.2-0ubuntu1_i386.deb
   - git clone git://git.gnome.org/glibmm
   - cd glibmm
   - git checkout 2.38.0
