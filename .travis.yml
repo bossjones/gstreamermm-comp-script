@@ -51,6 +51,7 @@ before_script:
   - ./autogen.sh
   - make
   - sudo make install
+  - ACLOCAL_FLAGS='-I /usr/local/share/aclocal'; export ACLOCAL_FLAGS
   - cd ..
   - git clone git://git.gnome.org/gstreamermm
   - cd gstreamermm
