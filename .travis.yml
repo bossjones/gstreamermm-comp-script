@@ -7,6 +7,12 @@ before_script:
   - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
   - sudo add-apt-repository --yes ppa:gstreamer-developers/ppa
   - sudo apt-get update -qq
+ - wget http://launchpadlibrarian.net/151433644/libglib2.0-0_2.38.0-1ubuntu1_amd64.deb
+  - sudo dpkg -i libglib2.0-0_2.38.0-1ubuntu1_amd64.deb
+  - wget http://launchpadlibrarian.net/151433647/libglib2.0-bin_2.38.0-1ubuntu1_amd64.deb
+  - sudo dpkg -i libglib2.0-bin_2.38.0-1ubuntu1_amd64.deb
+  - wget http://launchpadlibrarian.net/151433648/libglib2.0-dev_2.38.0-1ubuntu1_amd64.deb
+  - sudo dpkg -i libglib2.0-dev_2.38.0-1ubuntu1_amd64.deb
   - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.8; fi
   - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
   - sudo apt-get install -qq cmake
@@ -22,12 +28,6 @@ before_script:
   - sudo make
   - sudo mv libg* /usr/lib/
   - cd $GST_CREATOR_DIRECTORY
-  - wget http://launchpadlibrarian.net/160132364/libglib2.0-0_2.39.2-0ubuntu1_i386.deb
-  - sudo dpkg -i libglib2.0-0_2.39.2-0ubuntu1_i386.deb
-  - wget http://launchpadlibrarian.net/160132367/libglib2.0-bin_2.39.2-0ubuntu1_i386.deb
-  - sudo dpkg -i libglib2.0-bin_2.39.2-0ubuntu1_i386.deb
-  - wget http://launchpadlibrarian.net/160132368/libglib2.0-dev_2.39.2-0ubuntu1_i386.deb
-  - sudo dpkg -i libglib2.0-dev_2.39.2-0ubuntu1_i386.deb
   - git clone git://git.gnome.org/glibmm
   - cd glibmm
   - git checkout 2.38.0
