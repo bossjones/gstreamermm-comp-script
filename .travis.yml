@@ -11,7 +11,7 @@ before_script:
   - if [ "$CXX" = "g++" ]; then export CXX="g++-4.8" CC="gcc-4.8"; fi
   - sudo apt-get install -qq cmake
   - sudo apt-get install -qq libsigc++-2.0-dev
-  - sudo apt-get install -qq gstreamer1.0-plugins-base
+  - sudo apt-get install -qq gstreamer1.0 gstreamer1.0-plugins-base
   - sudo apt-get install -qq libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
   - sudo apt-get install -qq libffi-dev
   - sudo apt-get install -qq libxml-parser-perl
