@@ -15,6 +15,10 @@ before_script:
   - sudo dpkg -i libelfg0_0.8.13-3build1_amd64.deb
   - wget http://launchpadlibrarian.net/151433647/libglib2.0-bin_2.38.0-1ubuntu1_amd64.deb
   - sudo dpkg -i libglib2.0-bin_2.38.0-1ubuntu1_amd64.deb
+  - wget http://launchpadlibrarian.net/133701455/libpcre3_8.31-2_amd64.deb
+  - sudo dpkg -i libpcre3_8.31-2_amd64.deb
+  - wget http://launchpadlibrarian.net/133701458/libpcre3-dev_8.31-2_amd64.deb
+  - sudo dpkg -i libpcre3-dev_8.31-2_amd64.deb
   - wget http://launchpadlibrarian.net/151433648/libglib2.0-dev_2.38.0-1ubuntu1_amd64.deb
   - sudo dpkg -i libglib2.0-dev_2.38.0-1ubuntu1_amd64.deb
   - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.8; fi
