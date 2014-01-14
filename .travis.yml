@@ -21,15 +21,8 @@ before_script:
   - sudo make
   - sudo mv libg* /usr/lib/
   - cd $GST_CREATOR_DIRECTORY
-  - sudo apt-get install -qq gstreamer1.0 
-  - sudo apt-get install -qq libgstreamer1.0-dev 
-  - git clone git://anongit.freedesktop.org/gstreamer/gst-plugins-base
-  - cd gst-plugins-base
-  - git checkout 1.0.10
-  - ./autogen.sh --disable-gtk-doc
-  - make
-  - sudo make install
-  - cd ..
+  - sudo apt-get install -qq gstreamer1.0 gstreamer1.0-plugins-base
+  - sudo apt-get install -qq libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
   - git clone git://git.gnome.org/mm-common
   - cd mm-common
   - git checkout 0.9.6
@@ -54,6 +47,8 @@ before_script:
   - cd ..
   - git clone git://git.gnome.org/gstreamermm
   - cd gstreamermm
+  - sed '/adder/d' configure.ac > output
+  - mv output configure.ac 
   - ./autogen.sh
   - make
   - sudo make install
