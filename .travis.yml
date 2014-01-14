@@ -22,6 +22,7 @@ before_script:
   - cd $GST_CREATOR_DIRECTORY
   - sudo apt-get install -qq gstreamer1.0 gstreamer1.0-plugins-base
   - sudo apt-get install -qq libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+  - gst-inspect-1.0 adder
   - git clone git://git.gnome.org/mm-common
   - cd mm-common
   - git checkout 0.9.6
