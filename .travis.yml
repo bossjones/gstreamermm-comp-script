@@ -49,6 +49,8 @@ before_script:
   - cd gstreamermm
   - sed '/adder/d' configure.ac > output
   - mv output configure.ac 
+  - sed '/adder/d' gstreamer/src/filelist.am > output
+  - mv output gstreamer/src/filelist.am
   - ./autogen.sh
   - make
   - sudo make install
