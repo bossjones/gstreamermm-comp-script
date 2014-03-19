@@ -45,13 +45,9 @@ before_script:
   - make
   - sudo make install
   - cd ..
-  - git clone git://git.gnome.org/gstreamermm
-  - cd gstreamermm
-  - sed '/adder/d' configure.ac > output
-  - mv output configure.ac 
-  - sed '/adder/d' gstreamer/src/filelist.am > output
-  - mv output gstreamer/src/filelist.am
-  - ./autogen.sh
+  - tar xzf gstreamermm-1.0.8.tar.gz 
+  - cd gstreamermm-1.0.8
+  - ./configure
   - make
   - sudo make install
 script:
